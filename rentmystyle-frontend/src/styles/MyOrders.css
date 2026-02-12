@@ -1,0 +1,141 @@
+.orders-page {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background:
+        linear-gradient(135deg, rgba(15, 12, 41, 0.85), rgba(48, 43, 99, 0.85), rgba(36, 36, 62, 0.85)),
+        url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e12?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+.orders-page h1 {
+    font-weight: 700;
+    font-size: 34px;
+    margin-bottom: 50px;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.order-item-card {
+    background: rgba(255, 255, 255, 0.08);
+    /* Slightly lighter for more contrast */
+    backdrop-filter: blur(15px);
+    border-radius: 28px;
+    padding: 35px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+}
+
+.order-item-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #667eea;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+
+.order-header h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.status-badge {
+    padding: 6px 18px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.status-badge.placed,
+.status-badge.pending {
+    background: rgba(255, 152, 0, 0.2);
+    color: #ff9800;
+}
+
+.status-badge.confirmed,
+.status-badge.success {
+    background: rgba(46, 125, 50, 0.2);
+    color: #4caf50;
+}
+
+.status-badge.cancelled {
+    background: rgba(211, 47, 47, 0.2);
+    color: #ef5350;
+}
+
+.order-details p {
+    margin: 12px 0;
+    color: #e0e0e0;
+    font-size: 16px;
+}
+
+.order-details strong {
+    color: #ffffff;
+}
+
+.owner-order-info {
+    background: rgba(102, 126, 234, 0.12);
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.owner-order-info p {
+    margin: 0 !important;
+    font-weight: 500;
+}
+
+.owner-order-info strong {
+    color: #7f9cf5;
+}
+
+.order-products {
+    margin-top: 25px;
+}
+
+.order-products h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.order-products ul {
+    list-style: none;
+    padding: 0;
+}
+
+.order-products li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #cccccc;
+    font-size: 15px;
+}

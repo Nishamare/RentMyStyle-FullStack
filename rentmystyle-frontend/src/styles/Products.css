@@ -1,0 +1,307 @@
+/* ===============================
+   PAGE BACKGROUND
+================================ */
+.products-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-bottom: 50px;
+  animation: fadeIn 1s ease-in;
+}
+
+/* ===============================
+   HERO SECTION
+================================ */
+.hero-section {
+  text-align: center;
+  padding: 90px 20px 50px;
+  color: #ffffff;
+  backdrop-filter: blur(4px);
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  animation: slideDown 1s ease;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  animation: fadeIn 1.5s ease;
+}
+
+/* ===============================
+   SEARCH & FILTER
+================================ */
+.product-search-category {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px auto;
+  flex-wrap: wrap;
+}
+
+.product-search-category input,
+.product-search-category select {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.9);
+  min-width: 200px;
+}
+
+/* ===============================
+   PRODUCTS GRID
+================================ */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  padding: 40px;
+}
+
+/* ===============================
+   PRODUCT CARD
+================================ */
+.product-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: popUp 0.8s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+.product-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* ===============================
+   PRODUCT INFO
+================================ */
+.product-card h3 {
+  font-size: 1.1rem;
+  margin: 12px;
+  color: #222;
+}
+
+.product-card p {
+  margin: 0 12px 12px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* ===============================
+   VIEW DETAILS BUTTON
+================================ */
+.view-details-btn {
+  margin: 12px;
+  padding: 12px;
+  width: calc(100% - 24px);
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #111827, #374151);
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.view-details-btn:hover {
+  background: linear-gradient(135deg, #000000, #1f2933);
+  transform: scale(1.03);
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popUp {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+/* ===============================
+   FLOATING SIDEBAR (MODERN)
+================================ */
+.side-navbar-wrapper {
+  position: fixed;
+  left: 0;
+  top: 120px;
+  z-index: 2000;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(-280px);
+  /* Hide box by default */
+}
+
+.side-navbar-wrapper.is-open {
+  transform: translateX(0);
+}
+
+.side-navbar-box {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  padding: 30px 20px;
+  border-radius: 0 30px 30px 0;
+  box-shadow: 15px 0 45px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: none;
+  position: relative;
+  color: white;
+}
+
+.side-navbar-toggle {
+  position: absolute;
+  right: -130px;
+  /* Adjust based on label length */
+  top: 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 0 15px 15px 0;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 5px 0 15px rgba(102, 126, 234, 0.4);
+  transform-origin: left center;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.side-navbar-wrapper.is-open .side-navbar-toggle {
+  right: 15px;
+  /* Move inside when open */
+  top: 15px;
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.side-navbar-content h2 {
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+.side-nav-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.side-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(8px);
+  border-color: #667eea;
+}
+
+.side-nav-btn span {
+  font-size: 18px;
+}
+
+.side-preview-section {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.side-preview-section h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  opacity: 0.6;
+  margin-bottom: 15px;
+}
+
+.side-preview-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-preview-section li {
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.2);
+  margin-bottom: 8px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.side-preview-section li:hover {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.3);
+  transform: scale(1.02);
+}
+
+.no-products {
+  color: white;
+  text-align: center;
+  grid-column: 1 / -1;
+  font-size: 1.2rem;
+  padding: 40px;
+}

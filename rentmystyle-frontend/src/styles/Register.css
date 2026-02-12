@@ -1,0 +1,109 @@
+/* FORCE FULL SCREEN */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/* MAIN PAGE BACKGROUND */
+.register-page {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.65)
+    ),
+    url("https://images.unsplash.com/photo-1512436991641-6745cdb1723f");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bgFade 1.5s ease-in-out;
+}
+
+/* CARD - smaller & compact */
+.register-box {
+  width: 360px;        /* reduced from 420px */
+  padding: 25px;       /* reduced from 35px */
+  border-radius: 15px; /* slightly smaller radius */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35); /* lighter shadow */
+  animation: slideUp 1.2s ease;
+  text-align: center;
+}
+
+/* TEXT - headings & paragraph */
+.register-box h2 {
+  margin-bottom: 10px;  /* slightly larger spacing for balance */
+  font-weight: 700;
+  font-size: 1.5rem;    /* slightly smaller */
+}
+
+.register-box p {
+  font-size: 0.85rem;   /* slightly smaller text */
+  margin-bottom: 20px;
+}
+
+/* INPUTS - compact spacing */
+.register-box input {
+  width: 100%;
+  padding: 10px 12px;   /* smaller height */
+  margin-bottom: 12px;  /* reduce space between inputs */
+  border-radius: 8px;   /* smaller rounded corners */
+  border: 1px solid #ddd;
+  font-size: 0.9rem;    /* slightly smaller text */
+}
+
+/* BUTTON - compact */
+.register-box button,
+.role-btn {
+  padding: 10px;        /* smaller height */
+  font-size: 0.95rem;
+  border-radius: 25px;  /* slightly smaller */
+}
+
+.role-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #000;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.role-btn:hover {
+  background-color: #222;
+  transform: translateY(-2px);
+}
+
+/* LINK */
+.login-link {
+  display: block;
+  margin-top: 18px;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ANIMATIONS */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bgFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
